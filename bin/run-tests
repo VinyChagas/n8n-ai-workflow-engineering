@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Run unit tests (no live n8n required).
+set -euo pipefail
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "${ROOT}"
+export PYTHONPATH="${ROOT}/src${PYTHONPATH:+:${PYTHONPATH}}"
+exec python3 -m unittest discover -s tests/validation -v "$@"

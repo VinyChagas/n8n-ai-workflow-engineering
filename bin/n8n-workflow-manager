@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# n8n-workflow-manager — thin launcher for the Engineering Core CLI.
+# Works with any coding agent that can run shell commands.
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+export PYTHONPATH="${ROOT}/src${PYTHONPATH:+:${PYTHONPATH}}"
+
+exec python3 "${ROOT}/src/cli.py" "$@"

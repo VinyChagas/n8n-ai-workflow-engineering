@@ -1,0 +1,70 @@
+{
+  "name": "Health Monitor",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "hm-schedule-1",
+      "name": "Every 15 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "hm-a1",
+              "name": "check",
+              "value": "health",
+              "type": "string"
+            },
+            {
+              "id": "hm-a2",
+              "name": "status",
+              "value": "ok",
+              "type": "string"
+            },
+            {
+              "id": "hm-a3",
+              "name": "note",
+              "value": "Replace Set Health Result with real HTTP/health checks for your environment. Keep secrets in n8n credentials or $env — never inline.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "hm-set-1",
+      "name": "Set Health Result",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [300, 0]
+    }
+  ],
+  "connections": {
+    "Every 15 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Set Health Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

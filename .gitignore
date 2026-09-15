@@ -1,0 +1,57 @@
+# Runtime / secrets — never commit
+.env
+.env.*
+!.env.example
+*.env
+
+# Local API key storage
+.secrets/**
+!.secrets/README.md
+secrets/
+.secret/
+*.secret
+
+# Runtime / backups of private workflows
+backups/
+data/
+**/n8nEventLog*
+*decrypted*
+*credentials*decrypt*
+credentials-decrypted/
+export-credentials-decrypted/
+
+# Common secret material
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Editor / OS
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# Temp / local noise
+*.tmp
+*.bak
+logs/
+*.log
+.homologation/
+*.egg-info/

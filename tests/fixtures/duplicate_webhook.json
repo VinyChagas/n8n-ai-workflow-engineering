@@ -1,0 +1,34 @@
+{
+  "name": "Duplicate Webhook Local",
+  "nodes": [
+    {
+      "parameters": { "path": "shared-hook", "httpMethod": "POST" },
+      "id": "w1",
+      "name": "Webhook A",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": { "path": "shared-hook", "httpMethod": "GET" },
+      "id": "w2",
+      "name": "Webhook B",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 200]
+    },
+    {
+      "parameters": {},
+      "id": "s1",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [280, 100]
+    }
+  ],
+  "connections": {
+    "Webhook A": { "main": [[{ "node": "Set", "type": "main", "index": 0 }]] },
+    "Webhook B": { "main": [[{ "node": "Set", "type": "main", "index": 0 }]] }
+  },
+  "settings": {}
+}
