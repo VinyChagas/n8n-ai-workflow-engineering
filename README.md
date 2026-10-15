@@ -400,6 +400,7 @@ Ver: [docs/MCP-ROADMAP.md](docs/MCP-ROADMAP.md)
 
 | Documento | Conteúdo |
 |-----------|----------|
+| [docs/DOCUMENTACAO-TECNICA.md](docs/DOCUMENTACAO-TECNICA.md) | Pré-análise em ambiente separado e promoção para produção |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Camadas e contratos |
 | [docs/WORKFLOW-LIFECYCLE.md](docs/WORKFLOW-LIFECYCLE.md) | Do requisito à ativação |
 | [docs/SECURITY.md](docs/SECURITY.md) | Modelo de ameaças e mitigações |
